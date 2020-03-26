@@ -80,11 +80,6 @@ ul {
     padding: 0;
 }
 
-input,select{
-    /* iOS Safari の独自表示を牽制 */
-    -webkit-appearance: none;
-
-}
 
 /*◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆
 
@@ -239,6 +234,8 @@ a.back:hover {
     width: 100%;
     min-height: var(--height);
     padding: 0 var(--space);
+    /* iOS Safari の独自表示を牽制 */
+    -webkit-appearance: none;
 }
 
 .form textarea {
@@ -289,6 +286,9 @@ a.back:hover {
     color: white;
     border-radius: 0;
     border: none;
+    /* iOS Safari の独自表示を牽制 */
+    -webkit-appearance: none;
+
 }
 
 .form input[type="button"]:hover,
