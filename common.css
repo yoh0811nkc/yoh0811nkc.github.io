@@ -82,7 +82,7 @@ ul {
 
 input,select{
     /* iOS Safari の独自表示を牽制 */
-    -webkit-appearance: none;
+    appearance: none;
 
 }
 
