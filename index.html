@@ -12,6 +12,16 @@
 
     <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet" />
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet" />
+
+    <!-- ■■■■■■■■ PWA ■■■■■■■■ -->
+    <!-- アドレスバー等のブラウザのUIを非表示 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- default（Safariと同じ） / black（黒） / black-translucent（ステータスバーをコンテンツに含める） -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <!-- ホーム画面に表示されるアプリ名 -->
+    <meta name="apple-mobile-web-app-title" content="TAP10" />
+    <!-- ホーム画面に表示されるアプリアイコン -->
+    <link rel="apple-touch-icon" href="images/icons/icon-152x152.png" />
   </head>
 
   <body>
@@ -59,7 +69,7 @@
         <article>
           <h2>コントロール類スタイル</h2>
           <section>
-            <form action="" method="post">
+            <form action="https://zip-cloud.appspot.com/api/search?zipcode=7830060" method="post">
               <h3>テキストタイプ</h3>
               <div class="form">
                 <div>JASIS ID</div>
@@ -120,7 +130,7 @@
 
               <h3>buttonタイプ</h3>
               <div class="form">
-                <input type="button" name="btn_confirm" value="OK" />
+                <input type="submit" name="btn_confirm" value="OK" />
                 <input type="button" name="btn_confirm" value="OK" />
                 <input type="button" name="btn_confirm" value="OK" />
               </div>
