@@ -5,9 +5,9 @@ const CACHE_NAME = `${registration.scope}!${CACHE_VERSION}`;
 const urlsToCache = [
   '.',
   'common/jlogo.png',
-  'icons/icon-152x152.png',
-  'common.css',
-  'index.html'
+  'images/icons/icon-152x152.png',
+  'images/icons/icon-192x192.png',
+  'common.css'
 ];
 
 self.addEventListener('install', (event) => {
