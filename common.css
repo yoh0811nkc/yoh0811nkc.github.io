@@ -1,7 +1,7 @@
 /*◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆
-1
+
 共通
-1
+
 ◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆*/
 
 :root {
@@ -80,6 +80,10 @@ ul {
     padding: 0;
 }
 
+input{
+    /* iOS Safari の独自表示を牽制 */
+    -webkit-appearance: none;
+}
 
 /*◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆
 
@@ -244,11 +248,6 @@ a.back:hover {
     min-width: 0;
     width: 100%;
     resize: none;
-}
-
-.form input{
-    /* iOS Safari の独自表示を牽制 */
-    -webkit-appearance: none;
 }
 
 .form input[type="text"] {
