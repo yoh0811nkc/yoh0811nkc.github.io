@@ -24,13 +24,7 @@
     <link rel="apple-touch-icon" href="images/icons/icon-152x152.png" />
 
     <!-- ■■■■■■■■ PWA for others ■■■■■■■■ -->
-    <link rel="manifest" href="pwa.webmanifest">
-    <script>
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('sw.js')
-          .then((reg) => { console.log('SW registered.', reg); });
-      }
-    </script>
+    <link rel="manifest" href="manifest.json">
 
 </head>
 
@@ -168,5 +162,8 @@
       <div><i class="far fa-envelope">お問い合わせはこちら</i></div>
       <div>copyright&copy;　JAIMA All Rights Reserved.</div>
     </footer>
+
+    <script src="app.js"></script>
+
   </body>
 </html>
