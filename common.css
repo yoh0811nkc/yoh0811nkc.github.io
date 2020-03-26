@@ -38,10 +38,6 @@ body {
     margin: 0;
     padding: 0;
     font-size: 12pt;
-
-    /* iOS Safari の独自表示を牽制 */
-    -webkit-appearance: none;
-
 }
 
 body .container {
@@ -85,6 +81,9 @@ ul {
 }
 
 input,select{
+    /* iOS Safari の独自表示を牽制 */
+    -webkit-appearance: none;
+
 }
 
 /*◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆
