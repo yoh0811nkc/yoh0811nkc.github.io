@@ -228,6 +228,9 @@ a.back:hover {
 }
 
 .form select {
+    /* iOS Safari の独自表示を牽制 */
+    -webkit-appearance: none;
+
     font-size: 1rem;
     background: #ffffff;
     border: none;
@@ -274,7 +277,7 @@ a.back:hover {
 
 .form input[type="button"],
 .form input[type="submit"] {
-    /* iOS Safari などで角丸ボタンになるのを制御 */
+    /* iOS Safari の独自表示を牽制 */
     -webkit-appearance: none;
 
     flex: 1;
