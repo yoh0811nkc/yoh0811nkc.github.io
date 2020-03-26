@@ -274,7 +274,9 @@ a.back:hover {
 
 .form input[type="button"],
 .form input[type="submit"] {
+    /* iOS Safari などで角丸ボタンになるのを制御 */
     -webkit-appearance: none;
+
     flex: 1;
     font-size: 1rem;
     font-weight: bold;
