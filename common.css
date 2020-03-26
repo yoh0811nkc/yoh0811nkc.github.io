@@ -260,7 +260,7 @@ a.back:hover {
 .form input[type="text"]:nth-child(n + 2) {
     /* ２つ以上テキストボックスが並ぶ場合、２つめ以降は左側に線 */
     border-left: 1px solid var(--color_lightglay);
-    border-radius:none;
+    border-radius:0;
 }
 
 .form input[type="radio"] {
