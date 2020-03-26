@@ -40,8 +40,7 @@ body {
     font-size: 12pt;
 
     /* iOS Safari の独自表示を牽制 */
-    appearance: none;
-
+    -webkit-appearance: none;
 }
 
 body .container {
