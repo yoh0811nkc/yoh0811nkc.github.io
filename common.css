@@ -274,6 +274,7 @@ a.back:hover {
 
 .form input[type="button"],
 .form input[type="submit"] {
+    -webkit-appearance: none;
     flex: 1;
     font-size: 1rem;
     font-weight: bold;
@@ -286,7 +287,8 @@ a.back:hover {
     border: none;
 }
 
-.buttons input[type="button"]:hover {
+.form input[type="button"]:hover,
+.form input[type="submit"]:hover {
     background-color: var(--color_theme_hover);
 }
 
