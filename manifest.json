@@ -1,0 +1,17 @@
+
+{
+    "name": "JASIS会場システム",
+    "short_name": "会場システム",
+    "description": "一般社団法人 日本分析機器工業会 主催「JASIS」の会場アプリ",
+    "icons": [
+        {
+            "src": "images/icons/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ],
+    "start_url": "index.html",
+    "display": "fullscreen",
+    "theme_color": "#dff0d8",
+    "background_color": "#dff0d8"
+}

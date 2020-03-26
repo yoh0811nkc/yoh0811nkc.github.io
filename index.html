@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet" />
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet" />
 
-    <!-- ■■■■■■■■ PWA ■■■■■■■■ -->
+    <!-- ■■■■■■■■ PWA for iOS ■■■■■■■■ -->
     <!-- アドレスバー等のブラウザのUIを非表示 -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <!-- default（Safariと同じ） / black（黒） / black-translucent（ステータスバーをコンテンツに含める） -->
@@ -22,6 +22,20 @@
     <meta name="apple-mobile-web-app-title" content="JASIS会場システム" />
     <!-- ホーム画面に表示されるアプリアイコン -->
     <link rel="apple-touch-icon" href="images/icons/icon-152x152.png" />
+
+    <!-- ■■■■■■■■ PWA for others ■■■■■■■■ -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js').then(function(registration) {
+          // 登録成功
+          console.log('ServiceWorker の登録に成功しました。スコープ: ', registration.scope);
+        }).catch(function(err) {
+          // 登録失敗
+          console.log('ServiceWorker の登録に失敗しました。', err);
+        });
+      }
+      </script>
+
   </head>
 
   <body>
