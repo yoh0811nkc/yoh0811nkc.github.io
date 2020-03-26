@@ -227,10 +227,12 @@ a.back:hover {
     margin: auto;
 }
 
-.form select {
-    /* iOS Safari の独自表示を牽制 */
-    -webkit-appearance: none;
+.form{
+        /* iOS Safari の独自表示を牽制 */
+        -webkit-appearance: none;
+}
 
+.form select {
     font-size: 1rem;
     background: #ffffff;
     border: none;
@@ -277,9 +279,6 @@ a.back:hover {
 
 .form input[type="button"],
 .form input[type="submit"] {
-    /* iOS Safari の独自表示を牽制 */
-    -webkit-appearance: none;
-
     flex: 1;
     font-size: 1rem;
     font-weight: bold;
