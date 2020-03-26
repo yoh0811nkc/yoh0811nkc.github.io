@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JASISメンバー マイページ</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- <link rel="stylesheet" type="text/css" href="html5_reset.css"> -->
+    <link rel="stylesheet" type="text/css" href="common.css" />
+
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet" />
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <header>
+      <div></div>
+      <div>
+        <a href=""><img id="jasis_logo" src="common/jlogo.png" alt="JASISロゴ"/></a>
+      </div>
+      <div>
+        <a href=""><i class="fas fa-globe-asia"></i></a>
+      </div>
+    </header>
+
+    <div class="container">
+      <input id="gnav-input" type="checkbox" class="gnav-hidden" />
+      <label id="gnav-btn" for="gnav-input"><i class="fas fa-bars"></i></label>
+      <label id="gnav-black" for="gnav-input"></label>
+      <nav>
+        <ul>
+          <li>
+            <a href="index"><i class="fas fa-home">TOP</i></a>
+          </li>
+          <li>
+            <a href="event"><i class="fas fa-address-card">イベント申込</i></a>
+          </li>
+          <li>
+            <a href="personalinfo"><i class="fas fa-user">会員情報</i></a>
+          </li>
+          <li>
+            <a href="faq"><i class="fas fa-envelope">お問合わせ</i></a>
+          </li>
+          <li>
+            <a href="privacy"><i class="fas fa-exclamation-circle">プライバシポリシ</i></a>
+          </li>
+          <li>
+            <a href="logout"><i class="fas fa-sign-out-alt">ログアウト</i></a>
+          </li>
+        </ul>
+      </nav>
+
+      <main>
+        <h1>JASISマイページ</h1>
+        <a href="" class="back"><i class="fas fa-chevron-left">もどる</i></a>
+
+        <article>
+          <h2>コントロール類スタイル</h2>
+          <section>
+            <form action="" method="post">
+              <h3>テキストタイプ</h3>
+              <div class="form">
+                <div>JASIS ID</div>
+                <div>
+                  <input id="i_name" type="text" name="jasisid" value="" placeholder="JS123456" />
+                </div>
+              </div>
+
+              <h3>テキストタイプ2</h3>
+              <div class="form">
+                <div>姓名</div>
+                <div>
+                  <input id="i_sei" type="text" name="seimei1" value="" placeholder="姓(Family Name)" />
+                  <input id="i_mei1" type="text" name="seimei2" value="" placeholder="名(First Name)" />
+                  <input id="i_mei2" type="text" name="seimei3" value="" placeholder="名(First Name)" />
+                </div>
+              </div>
+
+              <h3>ラジオタイプ</h3>
+              <div class="form">
+                <div>性別</div>
+                <div>
+                  <label for="r_none"><input id="r_none" type="radio" name="gender0" value="選択しない" checked />選択しない</label>
+                  <label for="r_male"><input id="r_male" type="radio" name="gender1" value="男性" />男性</label>
+                  <label for="r_female"><input id="r_female" type="radio" name="gender2" value="女性" />女性</label>
+                </div>
+              </div>
+
+              <h3>checkboxタイプ</h3>
+              <div class="form">
+                <div>用途</div>
+                <div>
+                  <label for="r_youto0"> <input id="r_youto0" type="checkbox" name="gender" value="用途0" checked />選択しない</label>
+                  <label for="r_youto1"> <input id="r_youto1" type="checkbox" name="gender" value="用途１" />用途１</label>
+                  <label for="r_youto2"> <input id="r_youto2" type="checkbox" name="gender" value="用途２" />用途２</label>
+                </div>
+              </div>
+
+              <h3>selectタイプ</h3>
+              <div class="form">
+                <div>目的</div>
+                <div>
+                  <select name="select">
+                    <option value="0" selected>選択してください</option>
+                    <option value="1">選択肢１</option>
+                    <option value="2">選択肢２</option>
+                  </select>
+                </div>
+              </div>
+
+              <h3>textareaタイプ</h3>
+              <div class="form">
+                <div>お問合せ内容</div>
+                <div>
+                  <textarea rows="4" id="t_message" name="message" placeholder="こちらにお問い合わせ内容を入力してください。"></textarea>
+                </div>
+              </div>
+
+              <h3>buttonタイプ</h3>
+              <div class="form">
+                <input type="button" name="btn_confirm" value="OK" />
+                <input type="button" name="btn_confirm" value="OK" />
+                <input type="button" name="btn_confirm" value="OK" />
+              </div>
+            </form>
+          </section>
+        </article>
+
+        <article>
+          <h2>文書類スタイル</h2>
+          <section>
+            <h3>H3タイトル</h3>
+            <p>本文</p>
+            <p>本文</p>
+          </section>
+
+          <section>
+            <h3>H3タイトル</h3>
+          </section>
+        </article>
+      </main>
+    </div>
+
+    <footer>
+      <div>JASIS事務局 一般社団法人 日本分析機器工業会内</div>
+      <div><i class="far fa-envelope">お問い合わせはこちら</i></div>
+      <div>copyright&copy;　JAIMA All Rights Reserved.</div>
+    </footer>
+  </body>
+</html>
