@@ -43,7 +43,7 @@ input[type="text"] {
   width: 100%;
   -webkit-appearance: none;
   border-radius: 0;
-  outline: none;
+  border: solid 1px #333;
 }
 
 select {
@@ -53,7 +53,7 @@ select {
   width: 100%;
   -webkit-appearance: none;
   border-radius: 0;
-  outline: none;
+  border: solid 1px #333;
 }
 
 label {
