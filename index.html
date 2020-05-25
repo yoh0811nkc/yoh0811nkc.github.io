@@ -78,7 +78,7 @@
       <footer>aaaa</footer>
     </div>
 
-    <div style="background: rgba(0, 0, 0, 0.5); width: 100vw; height: 100vh; position: absolute; top: 0; left: 0; display: none;">
+    <div onclick="entryOk(1,'enrty_ok')" id="enrty_ok" style="background: rgba(0, 0, 0, 0.5); width: 100vw; height: 100vh; position: absolute; top: 0; left: 0; display: none;">
       <div style="display: flex; justify-content: center; align-items: center; background: #2f5597; width: 100vw; height: var(--height-footer); position: absolute; bottom: 0;">
         <div style="width: 100%; max-width: var(--max-width-container);">
           <div style="display: flex; align-items: center; justify-content: center; height: calc(var(--height-footer) * 0.7);">
@@ -89,7 +89,7 @@
       </div>
     </div>
 
-    <div style="background: rgba(0, 0, 0, 0.5); width: 100vw; height: 100vh; position: absolute; top: 0; left: 0; display: none;">
+    <div onclick="entryOk(1,'entry_ok_all')" id="entry_ok_all" style="background: rgba(0, 0, 0, 0.5); width: 100vw; height: 100vh; position: absolute; top: 0; left: 0; display: none;">
       <div style="display: flex; justify-content: center; align-items: center; background: #548235; width: 100vw; height: var(--height-footer); position: absolute; bottom: 0;">
         <div style="width: 100%; max-width: var(--max-width-container);">
           <div style="display: flex; align-items: center; justify-content: center; height: calc(var(--height-footer) * 0.7);">
@@ -100,7 +100,7 @@
       </div>
     </div>
 
-    <div style="background: rgba(0, 0, 0, 0.5); width: 100vw; height: 100vh; position: absolute; top: 0; left: 0;">
+    <div id="entry_ng" style="background: rgba(0, 0, 0, 0.5); width: 100vw; height: 100vh; position: absolute; top: 0; left: 0;">
       <div style="display: flex; justify-content: center; align-items: center; background: #333333; width: 100vw; height: var(--height-footer); position: absolute; bottom: 0;">
         <div style="width: 100%; max-width: var(--max-width-container);">
           <div style="display: flex; align-items: center; justify-content: center; height: calc(var(--height-footer) * 0.7);">
@@ -111,8 +111,8 @@
       </div>
       <div style="display: flex; justify-content: center; align-items: center; width: 100vw; line-height: 4em; position: absolute; bottom: var(--height-footer);">
         <div style="width: 100%; max-width: var(--max-width-container); display: flex;color: #fff;text-align: center;">
-          <div onclick="entryOk(1)" style="background: #2f5597;">入場OK</div>
-          <div onclick="entryOk(0);" style="background: #ff0000;">入場NG</div>
+          <div onclick="entryOk(1,'entry_ng')" style="background: #2f5597;">入場OK</div>
+          <div onclick="entryOk(0,'entry_ng');" style="background: #ff0000;">入場NG</div>
         </div>
       </div>
     </div>
@@ -120,13 +120,16 @@
     <script>
       setMaster();
 
-      function entryOk(req) {
-        let judge = req;
+      function entryOk(isOk,diagId) {
+        let judge = isOk;
+        let diag = diagId;
+        console.log(diagId);
         let isEntry = 0;
         if(judge==1){
           isEntry = 1;
         };
         console.log(`入場履歴のisEntryを「${isEntry}」でログ記録`);
+        document.getElementById(diagId).style.display="none";
       }
 
 
