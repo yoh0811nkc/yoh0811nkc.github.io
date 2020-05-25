@@ -1,419 +1,116 @@
-/*◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆
-
-共通
-
-◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆*/
-
 :root {
-    --color_theme: rgba(56, 174, 199, 0.7);
-    --color_theme_hover: rgba(56, 174, 199, 1);
-    --color_lightglay: #cccccc;
-    --color_glay: #666666;
-    --color_darkglay: #333333;
-    --width_nav: 300px;
-    --space: 1rem;
-    --height: 3rem;
-    --max_height_logo: 8vh;
-    --min_height_logo: 30px;
-    --max_height_header: calc(var(--max_height_logo) + (var(--space) * 2));
-    --min_height_header: calc(var(--min_height_logo) + (var(--space) * 2));
+  --max-width-container: 600px;
+  --max-width-label: 5em;
+  --padding: 0.3em;
+  --font-size: 1em;
+  --height: 2em;
+  --height-header: 2em;
+  --height-footer: 10em;
+  --height-main: calc(100% - var(--height-header) - var(--height-footer));
 }
-
-* {
-    text-decoration: none;
-    box-sizing: border-box;
-    /* Google webfont */
-    font-family: "M PLUS Rounded 1c", sans-serif;
-}
-
-.fas {
-    /* fontawasome の設定 */
-    color: #ffffff;
-}
-
 html,
 body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    font-size: 12pt;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: var(--font-size);
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
-
-body .container {
-    display: flex;
+div {
+  width: 100%;
 }
-
-h1 {
-    display: none;
-}
-
-h2 {
-    font-size: 1.2rem;
-    border-left: 1rem solid var(--color_theme_hover);
-    padding: var(--space);
-    color: #ffffff;
-    background-color: var(--color_theme);
-}
-
-h3:before {
-    content: "■";
-    margin: 0.5em;
-}
-
 h3 {
-    font-size: 1rem;
-    padding: 0 1rem;
-    color: var(--color_theme);
+  font-size: calc(var(--font-size) * 0.7);
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  padding: var(--padding);
+  background: #333;
+  color: #fff;
+}
+a, a:link, a:visited, a:hover, a:active {
+  color:#fff;
 }
 
-p {
-    font-size: 1rem;
-    padding-left: calc(var(--space) * 2);
+input[type="text"] {
+  box-sizing: border-box; /* 個別に指定しなきゃだめ */
+  font-size: var(--font-size);
+  height: var(--height);
+  width: 100%;
 }
 
-a:hover {
-    background-color: var(--color_theme_hover);
+select {
+  box-sizing: border-box; /* 個別に指定しなきゃだめ */
+  font-size: var(--font-size);
+  height: var(--height);
+  width: 100%;
 }
 
-ul {
-    padding: 0;
+label {
+  display: block;
+  width: 100%;
+  height: var(--height);
+  line-height: var(--height);
+  padding-left: var(--padding);
+  max-width: var(--max-width-label);
+  background: #444;
+  color: #fff;
 }
 
-
-/*◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆
-
-HTML5 要素設定
-
-◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆*/
-
-header {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    background-color: var(--color_theme);
-    display: flex;
-    align-items: center;
+label + input[type="text"] {
+  width: calc(100% - var(--max-width-label));
 }
 
-header>div {
-    padding: var(--space);
+/* ************************************************ */
+/* header */
+/* ************************************************ */
+.container_header {
+    flex-shrink: 0;
+    height: var(--height-header);
+    line-height: var(--height-header);
+    background: #000;
+  color: #fff;
+}
+.container_header > header {
+  max-width: var(--max-width-container);
+  margin: 0 auto;
 }
 
-header>div a {
-    padding: var(--space);
+/* ************************************************ */
+/* main */
+/* ************************************************ */
+.container_main {
+    flex-grow: 1;
+    overflow-y: auto;
+    /* height: var(--height-main); */
+    /* min-height: var(--height-main); */
+    background: #e7e8e9;
+}
+.container_main > main {
+  max-width: var(--max-width-container);
+  margin: 0 auto;
+  padding: 0 var(--padding); 
+}
+main > div {
+  padding-bottom: 1em;
+}
+main > div:first-child {
+  padding-top: 1em;
 }
 
-header>div:first-child {
-    flex: 1;
+/* ************************************************ */
+/* footer */
+/* ************************************************ */
+.container_footer {
+    flex-shrink: 0;
+    height: var(--height-footer);
+  background: #666;
 }
-
-header>div:nth-child(2) {
-    flex: 1;
-    text-align: center;
-}
-
-header>div:nth-child(2) a:hover {
-    background: none;
-}
-
-header>div:last-child {
-    flex: 1;
-    text-align: right;
-}
-
-main {
-    padding-top: var(--max_height_header);
-    width: 100%;
-}
-
-nav {
-    padding-top: var(--max_height_header);
-    background: var(--color_theme);
-}
-
-nav li {
-    list-style: none;
-}
-
-nav li a {
-    /* aの有効範囲を要素いっぱいにする */
-    display: block;
-    width: 100%;
-    padding: calc(var(--space) * 2);
-}
-
-footer {
-    font-size: 0.8em;
-    margin-top: auto;
-    color: #ffffff;
-    background-color: var(--color_darkglay);
-}
-
-footer>div {
-    text-align: center;
-}
-
-footer>div:first-child {
-    background: #000000;
-}
-
-footer>div:nth-child(n + 2) {
-    padding: var(--space);
-}
-
-footer>div:last-child {
-    padding-bottom: 3em;
-}
-
-
-/*◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆
-
-個別スタイル
-
-◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆*/
-
-#jasis_logo {
-    min-height: var(--min_height_logo);
-    max-height: var(--max_height_logo);
-}
-
-a.back {
-    display: table;
-    padding: var(--space);
-    margin: var(--space);
-}
-
-a.back>i {
-    color: var(--color_theme);
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center;
-}
-
-a.back:hover {
-    background-color: white;
-}
-
-.form {
-    display: flex;
-    margin: var(--space);
-    background-color: white;
-    border: none;
-}
-
-.form div {
-    display: flex;
-}
-
-.form div:nth-child(1) {
-    /* .formクラス直下のdiv (項目名) */
-    flex-basis: var(--width_nav);
-    min-height: var(--height);
-    border-left: 0.5rem solid var(--color_theme);
-    padding-left: var(--space);
-    align-items: center;
-    background-color: lightgray;
-}
-
-.form div:nth-child(2) {
-    /* .formクラス２つ目のdiv (内容) */
-    border: 1px solid var(--color_lightglay);
-    min-height: var(--height);
-    flex-basis: calc(100% - var(--width_nav));
-}
-
-.form label {
-    margin: auto;
-}
-
-.form select {
-    font-size: 1rem;
-    background: #ffffff;
-    border: none;
-    width: 100%;
-    min-height: var(--height);
-    padding: 0 var(--space);
-    /* iOS Safari の独自表示を牽制 */
-    -webkit-appearance: none;
-}
-
-.form textarea {
-    font-size: 1rem;
-    border: none;
-    padding: var(--space);
-    min-height: var(--height);
-    min-width: 0;
-    width: 100%;
-    resize: none;
-}
-
-.form input[type="text"] {
-    font-size: 1rem;
-    border: none;
-    flex: 1;
-    padding: 0 var(--space);
-    /* 狭小時はみでる対応 共通 (内側要素のpadding分)*/
-    width: calc(100% - var(--space));
-    /* 狭小時はみ出る対応 Firefox用 */
-    min-width: 0;
-}
-
-.form input[type="text"]:nth-child(n + 2) {
-    /* ２つ以上テキストボックスが並ぶ場合、２つめ以降は左側に線 */
-    border-left: 1px solid var(--color_lightglay);
-    border-radius:0;
-}
-
-.form input[type="radio"] {
-    border: 0;
-}
-
-.form input[type="checkbox"] {
-    border: 0;
-    justify-content: center;
-}
-
-.form input[type="button"],
-.form input[type="submit"] {
-    flex: 1;
-    font-size: 1rem;
-    font-weight: bold;
-    max-width: 100%;
-    margin: var(--space);
-    padding: var(--space) calc(var(--space) * 2);
-    background: var(--color_theme);
-    color: white;
-    border-radius: 0;
-    border: none;
-    /* iOS Safari の独自表示を牽制 */
-    -webkit-appearance: none;
-
-}
-
-.form input[type="button"]:hover,
-.form input[type="submit"]:hover {
-    background-color: var(--color_theme_hover);
-}
-
-
-/*◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆
-
-nav部分
-
-◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆*/
-
-#gnav-btn {
-    display: block;
-    position: fixed;
-    top: var(--space);
-    left: var(--space);
-    padding: var(--space);
-    margin: var(--space);
-    z-index: 110;
-}
-
-#gnav-black {
-    display: none;
-    position: fixed;
-    z-index: 90;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.25);
-}
-
-#gnav-input {
-    display: none;
-}
-
-#gnav-input:checked~#gnav-black {
-    display: block;
-}
-
-#gnav-input:checked~nav {
-    left: 0;
-}
-
-
-/*◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆
-
-メディアクエリ
-
-◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆*/
-
-@media screen and (max-width: 700px) {
-    .form {
-        display: flex;
-        flex-direction: column;
-    }
-    .form div:nth-child(1) {
-        flex-basis: 0;
-    }
-    nav {
-        display: block;
-        position: fixed;
-        top: 0;
-        left: -100%;
-        z-index: 100;
-        min-width: var(--width_nav);
-        height: 100%;
-        /* box-shadow: 6px 0 25px rgba(0, 0, 0, 0.5); */
-        transition: 0.3s;
-    }
-}
-
-@media screen and (min-width: 701px) and (max-width: 1199px) {
-    nav {
-        display: block;
-        position: fixed;
-        top: 0;
-        left: -100%;
-        z-index: 100;
-        min-width: var(--width_nav);
-        height: 100%;
-        /* box-shadow: 6px 0 25px rgba(0, 0, 0, 0.5); */
-        transition: 0.3s;
-    }
-}
-
-@media screen and (min-width: 1200px) {
-    h2 {
-        margin: 1rem;
-    }
-    #gnav-btn {
-        display: none;
-    }
-    nav {
-        flex-basis: var(--width_nav);
-    }
-    main {
-        flex-basis: calc(100% - var(--width_nav));
-    }
-}
-
-
-/* 印刷用暫定 */
-
-@media print {
-    #jasis_logo {
-        height: 2rem;
-        padding-bottom: var(--space);
-    }
-    header>div {
-        padding: 0;
-    }
-    header>div:first-child {
-        display: none;
-    }
-    header>div:last-child {
-        display: none;
-    }
-    nav {
-        display: none;
-    }
-    main {
-        margin-top: 0;
-    }
+.container_footer > footer {
+  max-width: var(--max-width-container);
+  margin: 0 auto;
 }

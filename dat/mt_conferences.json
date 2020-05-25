@@ -1,0 +1,12 @@
+[
+{ "conference_id": "1010",  "conference_name": "国際会議場101のカンファ1",  "place_id": "100"}, 
+{ "conference_id": "1020",  "conference_name": "国際会議場201のカンファ1",  "place_id": "200"}, 
+{ "conference_id": "1030",  "conference_name": "展示会場4のカンファ1",  "place_id": "300"}, 
+{ "conference_id": "1040",  "conference_name": "展示会場4のカンファ2",  "place_id": "300"}, 
+{ "conference_id": "1050",  "conference_name": "展示会場8のカンファ1",  "place_id": "400"}, 
+{ "conference_id": "1060",  "conference_name": "展示会場8のカンファ2",  "place_id": "400"}, 
+{ "conference_id": "1070",  "conference_name": "アパホテルの１",  "place_id": "500"}, 
+{ "conference_id": "1080",  "conference_name": "アパホテルの２",  "place_id": "500"}, 
+{ "conference_id": "1090",  "conference_name": "アパホテルの３",  "place_id": "500"}, 
+{ "conference_id": "1100",  "conference_name": "ニューオータニの会議",  "place_id": "600"}, 
+]

@@ -1,171 +1,236 @@
 <!DOCTYPE html>
-
 <html>
   <head>
-    <title>JASISメンバー マイページ</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>confRecp</title>
     <meta charset="utf-8" />
     <meta name="description" content="" />
     <meta name="author" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" />
+    <link rel="stylesheet" href="common.css" />
+    <!--[if lt IE 9]>
+      <script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="favicon.ico" />
+    <script src="./js/dexie.min.js"></script>
 
-    <!-- <link rel="stylesheet" type="text/css" href="html5_reset.css"> -->
-    <link rel="stylesheet" type="text/css" href="common.css" />
-
-    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet" />
-    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet" />
-
-    <!-- ■■■■■■■■ PWA for iOS ■■■■■■■■ -->
+    <!-- ■■■■■■■■■　iOS PWA化に必要な記述　▼　■■■■■■■■■ -->
     <!-- アドレスバー等のブラウザのUIを非表示 -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <!-- default（Safariと同じ） / black（黒） / black-translucent（ステータスバーをコンテンツに含める） -->
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <!-- ホーム画面に表示されるアプリ名 -->
-    <meta name="apple-mobile-web-app-title" content="JASIS" />
+    <meta name="apple-mobile-web-app-title" content="Conf受付" />
     <!-- ホーム画面に表示されるアプリアイコン -->
-    <link rel="apple-touch-icon" href="images/icons/icon-152x152.png" />
-
-    <!-- ■■■■■■■■ PWA for others ■■■■■■■■ -->
-    <link rel="manifest" href="manifest.json">
-
-</head>
-
+    <link rel="apple-touch-icon" href="img/icon.png" />
+    <!-- ■■■■■■■■■　iOS PWA化に必要な記述　▲　■■■■■■■■■ -->
+  </head>
   <body>
-    <header>
-      <div></div>
-      <div>
-        <a href=""><img id="jasis_logo" src="common/jlogo.png" alt="JASISロゴ"/></a>
-      </div>
-      <div>
-        <a href=""><i class="fas fa-globe-asia"></i></a>
-      </div>
-    </header>
+    <div class="container_header">
+      <header style="display: flex; justify-content: space-between; align-items: center;">
+        <span
+          ><a href=""><i class="fas fa-times fa-fw"></i></a>home
+        </span>
+        <span>
+          <i class="fas fa-database fa-fw"></i>
+          <i class="fas fa-network-wired fa-fw"></i>
+        </span>
+      </header>
+    </div>
 
-    <div class="container">
-      <input id="gnav-input" type="checkbox" class="gnav-hidden" />
-      <label id="gnav-btn" for="gnav-input"><i class="fas fa-bars"></i></label>
-      <label id="gnav-black" for="gnav-input"></label>
-      <nav>
-        <ul>
-          <li>
-            <a href="index"><i class="fas fa-home">TOP</i></a>
-          </li>
-          <li>
-            <a href="event"><i class="fas fa-address-card">イベント申込</i></a>
-          </li>
-          <li>
-            <a href="personalinfo"><i class="fas fa-user">会員情報</i></a>
-          </li>
-          <li>
-            <a href="faq"><i class="fas fa-envelope">お問合わせ</i></a>
-          </li>
-          <li>
-            <a href="privacy"><i class="fas fa-exclamation-circle">プライバシポリシ</i></a>
-          </li>
-          <li>
-            <a href="logout"><i class="fas fa-sign-out-alt">ログアウト</i></a>
-          </li>
-        </ul>
-      </nav>
-
+    <div class="container_main">
       <main>
-        <h1>JASISマイページ</h1>
-        <a href="" class="back"><i class="fas fa-chevron-left">もどる</i></a>
-
-        <article>
-          <h2>コントロール類スタイル</h2>
-          <section>
-            <form action="https://zip-cloud.appspot.com/api/search?zipcode=7830060" method="post">
-              <h3>テキストタイプ</h3>
-              <div class="form">
-                <div>JASIS ID</div>
-                <div>
-                  <input id="i_name" type="text" name="jasisid" value="" placeholder="JS123456" />
-                </div>
-              </div>
-
-              <h3>テキストタイプ2</h3>
-              <div class="form">
-                <div>姓名</div>
-                <div>
-                  <input id="i_sei" type="text" name="seimei1" value="" placeholder="姓(Family Name)" />
-                  <input id="i_mei1" type="text" name="seimei2" value="" placeholder="名(First Name)" />
-                  <input id="i_mei2" type="text" name="seimei3" value="" placeholder="名(First Name)" />
-                </div>
-              </div>
-
-              <h3>ラジオタイプ</h3>
-              <div class="form">
-                <div>性別</div>
-                <div>
-                  <label for="r_none"><input id="r_none" type="radio" name="gender0" value="選択しない" checked />選択しない</label>
-                  <label for="r_male"><input id="r_male" type="radio" name="gender1" value="男性" />男性</label>
-                  <label for="r_female"><input id="r_female" type="radio" name="gender2" value="女性" />女性</label>
-                </div>
-              </div>
-
-              <h3>checkboxタイプ</h3>
-              <div class="form">
-                <div>用途</div>
-                <div>
-                  <label for="r_youto0"> <input id="r_youto0" type="checkbox" name="gender" value="用途0" checked />選択しない</label>
-                  <label for="r_youto1"> <input id="r_youto1" type="checkbox" name="gender" value="用途１" />用途１</label>
-                  <label for="r_youto2"> <input id="r_youto2" type="checkbox" name="gender" value="用途２" />用途２</label>
-                </div>
-              </div>
-
-              <h3>selectタイプ</h3>
-              <div class="form">
-                <div>目的</div>
-                <div>
-                  <select name="select">
-                    <option value="0" selected>▼&nbsp;選択してください</option>
-                    <option value="1">選択肢１</option>
-                    <option value="2">選択肢２</option>
-                  </select>
-                </div>
-              </div>
-
-              <h3>textareaタイプ</h3>
-              <div class="form">
-                <div>お問合せ内容</div>
-                <div>
-                  <textarea rows="4" id="t_message" name="message" placeholder="こちらにお問い合わせ内容を入力してください。"></textarea>
-                </div>
-              </div>
-
-              <h3>buttonタイプ</h3>
-              <div class="form">
-                <input type="submit" name="btn_confirm" value="OK" />
-                <input type="button" name="btn_confirm" value="OK" />
-                <input type="button" name="btn_confirm" value="OK" />
-              </div>
-            </form>
-          </section>
-        </article>
-
-        <article>
-          <h2>文書類スタイル</h2>
-          <section>
-            <h3>H3タイトル</h3>
-            <p>本文</p>
-            <p>本文</p>
-          </section>
-
-          <section>
-            <h3>H3タイトル</h3>
-          </section>
-        </article>
+        <div>
+          <h3>場所選択</h3>
+          <!-- <input type="text" id="placeId" list="places" placeholder="場所を選択してください" /> -->
+          <select id="placeID">
+            <option value="101">場所１</option>
+            <option value="102">場所２</option>
+            <option value="103">場所３</option>
+          </select>
+        </div>
+        <div>
+          <h3>コンファレンス選択</h3>
+          <select id="conerenceID">
+            <option value="201">コンファレンス１</option>
+            <option value="202">コンファレンス２</option>
+            <option value="203">コンファレンス３</option>
+          </select>
+        </div>
+        <div>
+          <h3>入力</h3>
+          <input type="text" id="inputValue" onchange="inputCheck()" placeholder="入力" />
+          <!-- <button type="submit">submit</button> -->
+        </div>
+        <div>
+          <h3>個人情報</h3>
+          <div style="display: flex;"><label>読取値</label><input type="text" id="reqValue" onchange="postAdmission()" /></div>
+          <div style="display: flex;"><label>会社名</label><input type="text" id="resValueCompany" onchange="nowDt()" /></div>
+          <div style="display: flex;"><label>部署名</label><input type="text" id="resValueDept" /></div>
+          <div style="display: flex;"><label>個人名</label><input type="text" id="resValueName" /></div>
+        </div>
       </main>
     </div>
 
-    <footer>
-      <div>JASIS事務局 一般社団法人 日本分析機器工業会内</div>
-      <div><i class="far fa-envelope">お問い合わせはこちら</i></div>
-      <div>copyright&copy;　JAIMA All Rights Reserved.</div>
-    </footer>
+    <div class="container_footer">
+      <footer>aaaa</footer>
+    </div>
 
-    <!-- ■■■■■■■■ PWA for others ■■■■■■■■ -->
-    <script src="app.js"></script>
+    <div style="background: rgba(0, 0, 0, 0.5); width: 100vw; height: 100vh; position: absolute; top: 0; left: 0; display: none;">
+      <div style="display: flex; justify-content: center; align-items: center; background: #2f5597; width: 100vw; height: var(--height-footer); position: absolute; bottom: 0;">
+        <div style="width: 100%; max-width: var(--max-width-container);">
+          <div style="display: flex; align-items: center; justify-content: center; height: calc(var(--height-footer) * 0.7);">
+            <img src="./img/result_ok.svg" alt="受付「OK」アイコン" style="height: 100%;" />
+            <span style="color: #fff; font-weight: bold; flex-wrap: nowrap; padding-left: 1em;">入場を受付しました</span>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <div style="background: rgba(0, 0, 0, 0.5); width: 100vw; height: 100vh; position: absolute; top: 0; left: 0; display: none;">
+      <div style="display: flex; justify-content: center; align-items: center; background: #548235; width: 100vw; height: var(--height-footer); position: absolute; bottom: 0;">
+        <div style="width: 100%; max-width: var(--max-width-container);">
+          <div style="display: flex; align-items: center; justify-content: center; height: calc(var(--height-footer) * 0.7);">
+            <img src="./img/result_ok_all.svg" alt="受付「ALL OK」アイコン" style="height: 100%;" />
+            <span style="color: #fff; font-weight: bold; flex-wrap: nowrap; padding-left: 1em;">すべて入場OKで受付中</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background: rgba(0, 0, 0, 0.5); width: 100vw; height: 100vh; position: absolute; top: 0; left: 0;">
+      <div style="display: flex; justify-content: center; align-items: center; background: #333333; width: 100vw; height: var(--height-footer); position: absolute; bottom: 0;">
+        <div style="width: 100%; max-width: var(--max-width-container);">
+          <div style="display: flex; align-items: center; justify-content: center; height: calc(var(--height-footer) * 0.7);">
+            <img src="./img/result_ng.svg" alt="受付「NG」アイコン" style="height: 100%;" />
+            <span style="color: #fff; font-weight: bold; flex-wrap: nowrap; padding-left: 1em;">事前予約が見つかりません<br />入場させる場合は「入場OK」<br />を押してください</span>
+          </div>
+        </div>
+      </div>
+      <div style="display: flex; justify-content: center; align-items: center; width: 100vw; line-height: 4em; position: absolute; bottom: var(--height-footer);">
+        <div style="width: 100%; max-width: var(--max-width-container); display: flex;color: #fff;text-align: center;">
+          <div onclick="entryOk(1)" style="background: #2f5597;">入場OK</div>
+          <div onclick="entryOk(0);" style="background: #ff0000;">入場NG</div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      setMaster();
+
+      function entryOk(req) {
+        let judge = req;
+        let isEntry = 0;
+        if(judge==1){
+          isEntry = 1;
+        };
+        console.log(`入場履歴のisEntryを「${isEntry}」でログ記録`);
+      }
+
+
+      function inputCheck() {
+        let inputVal = document.getElementById("inputValue");
+        console.log("入力値：" + inputVal.value);
+
+        let reqVal = inputVal.value.replace(/[^0-9^\.]/g, function (tmpStr) {
+          return String.fromCharCode(tmpStr.charCodeAt(0) - 0xfee0);
+        });
+        console.log("読取値:" + reqVal);
+        document.getElementById("reqValue").value = reqVal;
+      }
+
+      function entryCheck() {}
+
+      function nowDt() {
+        let dtm = new Date();
+        let YYYY = dtm.getFullYear();
+        let MM = ("0" + dtm.getMonth()).slice(-2);
+        let DD = ("0" + dtm.getDay()).slice(-2);
+        let hh = ("0" + dtm.getHours()).slice(-2);
+        let mm = ("0" + dtm.getMinutes()).slice(-2);
+        let ss = ("0" + dtm.getSeconds()).slice(-2);
+        let value = `${YYYY}-${MM}-${DD} ${hh}:${mm}:${ss}`;
+        console.log(value);
+        return value;
+      }
+
+      function postAdmission() {
+        let url = "http://124.248.154.53:3000/admission/ins?";
+        let PERSONAL_ID = "123";
+        let TERMINAL_ID = "456";
+        let OFFLINE_FLG = "0";
+        let PLACE_ID = document.getElementById("placeID").value;
+        // let PLACE_ID = "2";
+        let apikey = "7JXrm366G5";
+        let ENTRANCE_DATE = nowDt().value;
+        fetch(url + "PERSONAL_ID=" + PERSONAL_ID + "&TERMINAL_ID=" + TERMINAL_ID + "&PLACE_ID=" + PLACE_ID + "&OFFLINE_FLG=" + OFFLINE_FLG + "&apikey=" + apikey + "&ENTRANCE_DATE=" + ENTRANCE_DATE, {
+          method: "post",
+        });
+      }
+
+      function setMaster() {
+        var db = new Dexie("MyDatabase");
+        db.version(1).stores({
+          mt_place: "place_id, place_name",
+          mt_conference: "conference_id, conference_name, place_id",
+          mt_conference_entry: "barcode_id, conference_id",
+        });
+
+        db.mt_place
+          .bulkPut([
+            { place_id: "100", place_name: "国際会議場101" },
+            { place_id: "200", place_name: "国際会議場201" },
+            { place_id: "300", place_name: "展示会場4" },
+            { place_id: "400", place_name: "展示会場8" },
+            { place_id: "500", place_name: "アパホテル" },
+            { place_id: "600", place_name: "ホテルニューオータニ" },
+          ])
+          .then(() => {
+            console.log("db places set");
+          });
+
+        db.mt_conference
+          .bulkPut([
+            { conference_id: "1010", conference_name: "国際会議場101のカンファ1", place_id: "100" },
+            { conference_id: "1020", conference_name: "国際会議場201のカンファ1", place_id: "200" },
+            { conference_id: "1030", conference_name: "展示会場4のカンファ1", place_id: "300" },
+            { conference_id: "1040", conference_name: "展示会場4のカンファ2", place_id: "300" },
+            { conference_id: "1050", conference_name: "展示会場8のカンファ1", place_id: "400" },
+            { conference_id: "1060", conference_name: "展示会場8のカンファ2", place_id: "400" },
+            { conference_id: "1070", conference_name: "アパホテルの１", place_id: "500" },
+            { conference_id: "1080", conference_name: "アパホテルの２", place_id: "500" },
+            { conference_id: "1090", conference_name: "アパホテルの３", place_id: "500" },
+            { conference_id: "1100", conference_name: "ニューオータニの会議", place_id: "600" },
+          ])
+          .then(() => {
+            console.log("db conferences set");
+          });
+
+        db.mt_conference_entry
+          .bulkPut([
+            { barcode_id: "50000033", conference_id: "1010" },
+            { barcode_id: "12345678", conference_id: "1020" },
+            { barcode_id: "23456789", conference_id: "1030" },
+            { barcode_id: "34567890", conference_id: "1040" },
+            { barcode_id: "50000033", conference_id: "1050" },
+            { barcode_id: "12345678", conference_id: "1060" },
+            { barcode_id: "23456789", conference_id: "1070" },
+            { barcode_id: "34567890", conference_id: "1080" },
+            { barcode_id: "50000033", conference_id: "1090" },
+            { barcode_id: "12345678", conference_id: "1100" },
+            { barcode_id: "23456789", conference_id: "1010" },
+            { barcode_id: "34567890", conference_id: "1020" },
+          ])
+          .then(() => {
+            console.log("db conferences entry set");
+          });
+      }
+    </script>
+
+    <!-- Place your content here -->
+    <!-- SCRIPTS -->
+    <!-- Example: <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
   </body>
 </html>

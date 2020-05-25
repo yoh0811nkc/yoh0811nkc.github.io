@@ -1,0 +1,14 @@
+[
+{ "barcode_id": "50000033",  "conference_id": "1010"}, 
+{ "barcode_id": "12345678",  "conference_id": "1020"}, 
+{ "barcode_id": "23456789",  "conference_id": "1030"}, 
+{ "barcode_id": "34567890",  "conference_id": "1040"}, 
+{ "barcode_id": "50000033",  "conference_id": "1050"}, 
+{ "barcode_id": "12345678",  "conference_id": "1060"}, 
+{ "barcode_id": "23456789",  "conference_id": "1070"}, 
+{ "barcode_id": "34567890",  "conference_id": "1080"}, 
+{ "barcode_id": "50000033",  "conference_id": "1090"}, 
+{ "barcode_id": "12345678",  "conference_id": "1100"}, 
+{ "barcode_id": "23456789",  "conference_id": "1010"}, 
+{ "barcode_id": "34567890",  "conference_id": "1020"}
+]
