@@ -3,8 +3,8 @@
   --max-width-label: 5em;
   --padding: 0.3em;
   --font-size: 1em;
-  --height: 2em;
-  --height-header: 2em;
+  --height: 4em;
+  --height-header: 3em;
   --height-footer: 10em;
   --height-main: calc(100% - var(--height-header) - var(--height-footer));
 }
@@ -43,6 +43,7 @@ input[type="text"] {
   width: 100%;
   -webkit-appearance: none;
   border-radius: 0;
+  outline: none;
 }
 
 select {
@@ -52,6 +53,7 @@ select {
   width: 100%;
   -webkit-appearance: none;
   border-radius: 0;
+  outline: none;
 }
 
 label {
